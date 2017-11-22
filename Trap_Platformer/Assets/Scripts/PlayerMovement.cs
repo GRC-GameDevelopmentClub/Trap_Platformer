@@ -15,22 +15,22 @@ public class PlayerMovement : MonoBehaviour {
 	
 	// Update is called once per frame
 	void Update () {
-		if (Input.GetKey (KeyCode.UpArrow) && isOnGround) {
+		if (Input.GetKey (KeyCode.UpArrow) && isOnGround) { //Player jumps
 			Jump ();
 		}
 		}
-	private void OnCollisionEnter2D (Collision2D collision){
+	private void OnCollisionEnter2D (Collision2D collision){ 
 		if (collision.gameObject.CompareTag ("Ground")) {
 			isOnGround = true;
 		}
 		}
 	private void FixedUpdate(){
 		moveX = Input.GetAxis ("Horizontal");
-		rb.velocity = new Vector2 (moveX * speed, rb.velocity.y);
+		rb.velocity = new Vector2 (moveX * speed, rb.velocity.y); // Move
 		}
 
 	private void Jump(){
-		rb.velocity = new Vector2 (rb.velocity.x, jumpforce);
+		rb.velocity = new Vector2 (rb.velocity.x, jumpforce); //Jump
 		isOnGround = false;
 	}
-	}
+	 }
