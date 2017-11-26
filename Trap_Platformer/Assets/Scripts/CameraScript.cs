@@ -5,7 +5,7 @@ using UnityEngine;
 public class CameraScript : MonoBehaviour {
 
     public Transform target;
-    public float speed;
+    public float speed = 1.0f;
     public float zoom;
     public Vector2 offSet;
 
