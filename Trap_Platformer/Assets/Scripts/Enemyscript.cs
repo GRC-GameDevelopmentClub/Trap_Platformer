@@ -15,10 +15,13 @@ public class Enemyscript : MonoBehaviour {
 	// Update is called once per frame
 	void Update () {
 		timer += Time.deltaTime;
-			rb.velocity = new Vector2 (speed * direction,rb.velocity.y);
+		rb.velocity = new Vector2 (speed * direction,rb.velocity.y);
 			if (timer > 2f){
 				direction *= -1;
 				timer = 0;
 			}
 	}
+	
 }
+
+
