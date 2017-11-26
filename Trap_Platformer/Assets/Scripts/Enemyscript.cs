@@ -7,6 +7,7 @@ public class Enemyscript : MonoBehaviour {
 	public int health;
 	private Rigidbody2D rb;
 	int direction = 1;
+	private bool faceRight = true;
 	// Use this for initialization
 	void Start () {
 		rb = GetComponent <Rigidbody2D> ();
@@ -20,8 +21,17 @@ public class Enemyscript : MonoBehaviour {
 				direction *= -1;
 				timer = 0;
 			}
+		if (direction > 0 && !faceRight) {
+			flip ();
+		} 
+		else if (direction < 0 && faceRight) {
+			flip ();
+		}
 	}
-	
+	void flip () {
+		faceRight = !faceRight;
+		transform.localScale = new Vector3 (transform.localScale.x * -1, transform.localScale.y, transform.localScale.z);
+	}
 }
 
 
