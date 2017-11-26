@@ -26,8 +26,6 @@ public class PlayerMovement : MonoBehaviour {
 		if (Input.GetKey (KeyCode.UpArrow) && isOnGround) {
 			Jump ();
 		}
-	}
-	private void OnCollisionEnter2D (Collision2D collision){
 		if (moveX > 0 && !faceRight) {
 			flip ();
 		} 
