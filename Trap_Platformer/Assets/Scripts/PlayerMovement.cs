@@ -7,6 +7,7 @@ public class PlayerMovement : MonoBehaviour {
 	private bool isOnGround;
 	public float jumpforce;
 	private float moveX;
+	private bool faceRight = true;
 	// Use this for initialization
 	void Start () {
 		rb = GetComponent<Rigidbody2D> ();
@@ -17,7 +18,13 @@ public class PlayerMovement : MonoBehaviour {
 		if (Input.GetKey (KeyCode.UpArrow) && isOnGround) { //Player jumps
 			Jump ();
 		}
+		if (moveX > 0 && !faceRight) {
+			flip ();
+		} 
+		else if (moveX < 0 && !faceRight) {
+			flip ();
 		}
+	}
 	private void OnCollisionEnter2D (Collision2D collision){ 
 		if (collision.gameObject.CompareTag ("Ground")) {
 			isOnGround = true;
@@ -31,5 +38,9 @@ public class PlayerMovement : MonoBehaviour {
 	private void Jump(){
 		rb.velocity = new Vector2 (rb.velocity.x, jumpforce); //Jump
 		isOnGround = false;
+	}
+	void flip () {
+		faceRight = !faceRight;
+		transform.localScale = new Vector3 (transform.localScale.x * -1, transform.localScale.y, transform.localScale.z);
 	}
 	 }
