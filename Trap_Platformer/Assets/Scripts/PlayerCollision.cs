@@ -2,9 +2,11 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Player : MonoBehaviour {
+public class PlayerCollision : MonoBehaviour {
 	private bool Death;
 	public GameObject respawn;
+	private float timer;
+
 
 	private void OnCollisionEnter2D (Collision2D collision){
 		if (collision.gameObject.CompareTag ("Enemy")) {
@@ -12,10 +14,18 @@ public class Player : MonoBehaviour {
 			}
 		}
 	void Update () {
+		Debug.Log ("collision death"+ Death);
 		if (Death == true) {
 			gameObject.transform.position = respawn.transform.position;
+			timer += Time.deltaTime;
+		}
+		if (timer > 0.1f) {
 			Death = false;
 		}
+	}
+
+	public bool isDead(){
+		return Death;
 	}
 }
 
