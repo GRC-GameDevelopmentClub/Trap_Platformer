@@ -5,19 +5,32 @@ using UnityEngine;
 public class Dissapearingplatforms : MonoBehaviour {
 	float time;
 	private bool IsTrapground;
+	private Vector2 originalPos;
+	public GameObject PlayerObject;
+	private PlayerCollision PlayerScript;
 
+	void Start (){
+		originalPos = this.transform.position;
+	}
 	// Update is called once per frame
 	void Update () {
-
-		Debug.Log (time);
+		PlayerScript = PlayerObject.GetComponent<PlayerCollision> ();
+		Debug.Log (originalPos);
+		Debug.Log (PlayerScript.isDead());
+		Debug.Log ("currnt pos" + this.transform.position);
+		if (PlayerScript.isDead()) {
+			Debug.Log ("MOVE BITCH");
+			this.transform.position = originalPos;
+		}
 
 		if (IsTrapground) {
 			time += Time.deltaTime;
 		}
-		
+
 		if (IsTrapground == true && time > 0.5f) {
-			Destroy (gameObject);
+			this.transform.position = new Vector2 (10, 10);
 			time = 0f;
+			IsTrapground = false;
 		}
 	}
 	private void OnCollisionStay2D (Collision2D collision) {
