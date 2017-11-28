@@ -9,6 +9,7 @@ public class PowerUpEffect : MonoBehaviour {
     public String effect;
     public float effectTime;
     public bool isBeingUsed;
+    
 
     private PlayerStats playStats;
 
@@ -34,7 +35,9 @@ public class PowerUpEffect : MonoBehaviour {
                 DestroyObject(this.gameObject);
             }
         }
-	}
+
+        
+    }
 
     public void Use()
     {
@@ -61,6 +64,7 @@ public class PowerUpEffect : MonoBehaviour {
     {
         isBeingUsed = true;
         playStats.jumpForce *= mulitiplier;
+        playStats.color = Color.magenta;
     }
 
     public void ShieldEffect()

@@ -8,6 +8,7 @@ public class PlayerStats : MonoBehaviour {
     public float speed = 5.0f;
     public float jumpForce = 5.0f;
     public float scale = 1.0f;
+    public Color color;
 
     private List<float> stats;
 
@@ -18,6 +19,9 @@ public class PlayerStats : MonoBehaviour {
         stats.Add(speed); // 1
         stats.Add(jumpForce); //2
         stats.Add(scale); // 3
+
+        color = Color.white;
+
     }
 
     public void RestStats()
@@ -26,5 +30,6 @@ public class PlayerStats : MonoBehaviour {
         speed = stats[1];
         jumpForce = stats[2];
         scale = stats[3];
+        color = Color.white;
     }
 }
