@@ -41,8 +41,6 @@ public class PowerUpEffect : MonoBehaviour {
         if (effect.Equals("Fast"))
         {
             FasterEffect();
-
-            FasterEffect();
         }else if (effect.Equals("Shield"))
         {
             ShieldEffect();
@@ -56,7 +54,6 @@ public class PowerUpEffect : MonoBehaviour {
     public void FasterEffect()
     {
         isBeingUsed = true;
-        Debug.Log(playStats);
         playStats.speed *= mulitiplier;
     }
 

@@ -8,7 +8,7 @@ public class PlayerMovement : MonoBehaviour {
 	public float jumpforce;
 	private float moveX;
 
-  private PlayerStats playerStats;
+    private PlayerStats playerStats;
 
 	private bool faceRight = true;
 
