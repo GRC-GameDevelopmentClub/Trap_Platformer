@@ -21,6 +21,7 @@ public class PlayerCollision : MonoBehaviour {
 		}
 		if (timer > 0.1f) {
 			Death = false;
+			timer = 0;
 		}
 	}
 
