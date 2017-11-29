@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 
 public class PlayerCollision : MonoBehaviour {
-	private bool Death;
+	public bool Death;
 	public GameObject respawn;
 	private float timer;
 

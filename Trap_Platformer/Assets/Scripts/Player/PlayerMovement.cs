@@ -7,8 +7,10 @@ public class PlayerMovement : MonoBehaviour {
 	private bool isOnGround;
 	public float jumpforce;
 	private float moveX;
+    private SpriteRenderer sprite;
 
-  private PlayerStats playerStats;
+    private PlayerStats playerStats;
+
 
 	private bool faceRight = true;
 
@@ -16,16 +18,20 @@ public class PlayerMovement : MonoBehaviour {
 	void Start () {
 	    rb = GetComponent<Rigidbody2D> ();
         playerStats = GetComponent<PlayerStats>();
+
+        sprite = this.GetComponentInChildren<SpriteRenderer>();
+        
 	}
 	
 	// Update is called once per frame
 	void Update () {
         speed = playerStats.speed;
         jumpforce = playerStats.jumpForce;
-
-		if (Input.GetKey (KeyCode.UpArrow) && isOnGround) {
+        sprite.color = playerStats.color;
+        
+        if (Input.GetKey (KeyCode.UpArrow) && isOnGround) {
 			Jump ();
-		}
+        }
 		if (moveX > 0 && !faceRight) {
 			flip ();
 		} 
