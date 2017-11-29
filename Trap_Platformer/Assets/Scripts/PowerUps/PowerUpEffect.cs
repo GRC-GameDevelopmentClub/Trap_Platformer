@@ -9,6 +9,7 @@ public class PowerUpEffect : MonoBehaviour {
     public String effect;
     public float effectTime;
     public bool isBeingUsed;
+    
 
     private PlayerStats playStats;
 
@@ -34,14 +35,14 @@ public class PowerUpEffect : MonoBehaviour {
                 DestroyObject(this.gameObject);
             }
         }
-	}
+
+        
+    }
 
     public void Use()
     {
         if (effect.Equals("Fast"))
         {
-            FasterEffect();
-
             FasterEffect();
         }else if (effect.Equals("Shield"))
         {
@@ -56,7 +57,6 @@ public class PowerUpEffect : MonoBehaviour {
     public void FasterEffect()
     {
         isBeingUsed = true;
-        Debug.Log(playStats);
         playStats.speed *= mulitiplier;
     }
 
@@ -64,6 +64,7 @@ public class PowerUpEffect : MonoBehaviour {
     {
         isBeingUsed = true;
         playStats.jumpForce *= mulitiplier;
+        playStats.color = Color.magenta;
     }
 
     public void ShieldEffect()
