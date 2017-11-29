@@ -11,6 +11,7 @@ public class PlayerMovement : MonoBehaviour {
 
     private PlayerStats playerStats;
 
+
 	private bool faceRight = true;
 
 	// Use this for initialization

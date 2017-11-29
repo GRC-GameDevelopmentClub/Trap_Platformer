@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 
 public class Dissapearingplatforms : MonoBehaviour {
+	public float fallingspeed;
 	float time;
 	private bool IsTrapground;
 	private Vector2 originalPos;
@@ -27,7 +28,7 @@ public class Dissapearingplatforms : MonoBehaviour {
 			time += Time.deltaTime;
 		}
 
-		if (IsTrapground == true && time > 0.5f) {
+		if (IsTrapground == true && time > fallingspeed) {
 			this.transform.position = new Vector2 (10, 10);
 			time = 0f;
 			IsTrapground = false;
