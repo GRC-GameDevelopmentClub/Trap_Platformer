@@ -59,4 +59,8 @@ public class PlayerMovement : MonoBehaviour {
 		faceRight = !faceRight;
 		transform.localScale = new Vector3 (transform.localScale.x * -1, transform.localScale.y, transform.localScale.z);
 	}
+
+	public Rigidbody2D GetRigidbody2D() {
+		return rb;
+	}
 }

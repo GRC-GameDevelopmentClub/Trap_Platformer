@@ -218,7 +218,7 @@ Prefab:
     - target: {fileID: 50191624575667040, guid: 219a299a8793a40a3b495997634b54dd,
         type: 2}
       propertyPath: m_GravityScale
-      value: 1
+      value: 3
       objectReference: {fileID: 0}
     - target: {fileID: 114558519647725870, guid: 219a299a8793a40a3b495997634b54dd,
         type: 2}
@@ -290,7 +290,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   health: 10
   speed: 5
-  jumpForce: 10
+  jumpForce: 20
   scale: 1
   color: {r: 0, g: 0, b: 0, a: 0}
 --- !u!1001 &532009966
@@ -379,6 +379,11 @@ Prefab:
       propertyPath: player
       value: 
       objectReference: {fileID: 519352218}
+    - target: {fileID: 114998090382976846, guid: f82bb8e5960b341edab62570cbcc2e1a,
+        type: 2}
+      propertyPath: speed
+      value: 1.5
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: f82bb8e5960b341edab62570cbcc2e1a, type: 2}
   m_IsPrefabParent: 0
@@ -732,7 +737,7 @@ GameObject:
   - component: {fileID: 1248522134}
   m_Layer: 0
   m_Name: Blades
-  m_TagString: Untagged
+  m_TagString: Enemy
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -773,8 +778,8 @@ Transform:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1276612141}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 4.1737294, y: 0.25216764, z: 0}
-  m_LocalScale: {x: 5, y: 5, z: 1}
+  m_LocalPosition: {x: 3.92, y: 0.20558, z: 0}
+  m_LocalScale: {x: 4.424838, y: 4.424839, z: 0.8849678}
   m_Children:
   - {fileID: 1865648022}
   - {fileID: 1010106094}
@@ -853,6 +858,7 @@ GameObject:
   - component: {fileID: 1445506597}
   - component: {fileID: 1445506596}
   - component: {fileID: 1445506595}
+  - component: {fileID: 1445506600}
   m_Layer: 0
   m_Name: Enemy
   m_TagString: Enemy
@@ -872,7 +878,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   speed: 5
-  health: 2
 --- !u!61 &1445506596
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -885,7 +890,7 @@ BoxCollider2D:
   m_IsTrigger: 1
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: -0.06891048, y: 2.8763194}
+  m_Offset: {x: -0.23445106, y: 2.8763194}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0, y: 0}
@@ -896,7 +901,7 @@ BoxCollider2D:
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 3.3427093, y: 0.68913555}
+  m_Size: {x: 4.0048714, y: 0.68913555}
   m_EdgeRadius: 0
 --- !u!58 &1445506597
 CircleCollider2D:
@@ -947,6 +952,19 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1445506600
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1445506594}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 49e6c434ecb904c89a8ead5eb8791ec6, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  health: 2
+  bounceForce: 2000
 --- !u!1001 &1502861568
 Prefab:
   m_ObjectHideFlags: 0
@@ -1099,11 +1117,11 @@ Prefab:
     m_Modifications:
     - target: {fileID: 4905488068392908, guid: 18755242f2e1d6644ad9c8e5cc176d40, type: 2}
       propertyPath: m_LocalPosition.x
-      value: -0.41
+      value: -2.32
       objectReference: {fileID: 0}
     - target: {fileID: 4905488068392908, guid: 18755242f2e1d6644ad9c8e5cc176d40, type: 2}
       propertyPath: m_LocalPosition.y
-      value: -0.15
+      value: -0.31
       objectReference: {fileID: 0}
     - target: {fileID: 4905488068392908, guid: 18755242f2e1d6644ad9c8e5cc176d40, type: 2}
       propertyPath: m_LocalPosition.z
