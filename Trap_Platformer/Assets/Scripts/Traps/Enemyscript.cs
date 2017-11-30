@@ -4,10 +4,10 @@ using UnityEngine;
 
 public class Enemyscript : MonoBehaviour {
 	public float speed;
-	public int health;
 	private Rigidbody2D rb;
 	int direction = 1;
 	private bool faceRight = true;
+
 	// Use this for initialization
 	void Start () {
 		rb = GetComponent <Rigidbody2D> ();
