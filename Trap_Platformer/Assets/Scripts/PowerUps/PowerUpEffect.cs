@@ -13,7 +13,8 @@ public class PowerUpEffect : MonoBehaviour {
 
     private PlayerStats playStats;
 
-    public PlayerStats PlayerStats { get { return playStats; } set { playStats = value; } }
+    public PlayerStats PlayerStats { get { return playStats; }
+        set { playStats = value; } }
    
     // Use this for initialization
     void Start () {
@@ -51,6 +52,7 @@ public class PowerUpEffect : MonoBehaviour {
         {
             JumpEffect();
         }
+        
 
     }
 
